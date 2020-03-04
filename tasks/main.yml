@@ -18,7 +18,7 @@
       - gnupg2
       - software-properties-common
     state: present
-    update_cache: yes
+    update_cache: true
 
 - name: install docker apt key
   apt_key:
@@ -29,7 +29,7 @@
 - name: add docker repository
   apt_repository:
     repo: "deb [arch=amd64] https://download.docker.com/linux/{{ ansible_distribution|lower }} {{ ansible_distribution_release }} stable"
-    update_cache: yes
+    update_cache: true
 
 - name: install docker
   apt:
@@ -42,7 +42,7 @@
   systemd:
     name: docker
     state: restarted
-    daemon_reload: yes
+    daemon_reload: true
 
 - name: check if docker-compose version
   command: docker-compose --version
