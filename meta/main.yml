@@ -1,8 +1,8 @@
 ---
 galaxy_info:
   author: Will English IV
-  role_name: willenglishiv.docker
-  description: Docker for various *nix systems
+  role_name: docker
+  description: Docker for various *nix systems.  Currently for Debian.
   license: license (BSD, MIT)
   min_ansible_version: 2.4
   platforms:
