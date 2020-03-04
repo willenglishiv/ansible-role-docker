@@ -39,10 +39,10 @@
       - containerd.io
 
 - name: restart docker service
-  systemd:
+  service:
     name: docker
     state: restarted
-    daemon_reload: true
+    enabled: true
 
 - name: check if docker-compose version
   command: docker-compose --version
