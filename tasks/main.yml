@@ -38,12 +38,6 @@
       - docker-ce-cli
       - containerd.io
 
-- name: restart docker service
-  service:
-    name: docker
-    state: restarted
-    enabled: true
-
 - name: check if docker-compose version
   command: docker-compose --version
   register: docker_compose_current_version
