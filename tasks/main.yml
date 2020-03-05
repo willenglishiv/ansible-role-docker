@@ -37,6 +37,14 @@
       - docker-ce
       - docker-ce-cli
       - containerd.io
+    state: present
+  notify: restart docker
+
+- name: ensure docker is started and enabled at boot.
+  service:
+    name: docker
+    state: started
+    enabled: true
 
 - name: check if docker-compose version
   command: docker-compose --version
